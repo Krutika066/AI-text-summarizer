@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Summarizer | Modern NLP Suite</title>
+    <meta name="description" content="Effortlessly summarize long documents and text using state-of-the-art AI.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <i class="fas fa-brain"></i>
+            <span>Summa<span>AI</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Summarizer</a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> Source</a>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <h1>AI Powered <span>Text Summarizer</span></h1>
+            <p>Transform lengthy content into concise, meaningful summaries in seconds.</p>
+        </header>
+
+        <section class="input-section">
+            <div class="card glass">
+                <div class="card-header">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="text-input">Text Input</button>
+                        <button class="tab-btn" data-tab="file-input">Upload Document</button>
+                    </div>
+                    <div class="length-selector">
+                        <span>Length:</span>
+                        <select id="summary-length">
+                            <option value="short">Short</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="long">Long</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="tab-content active" id="text-input">
+                    <textarea id="text-area" placeholder="Paste your long text here..."></textarea>
+                </div>
+
+                <div class="tab-content" id="file-input">
+                    <div class="file-drop-zone" id="drop-zone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & Drop files or <span>Browse</span></p>
+                        <small>Supports PDF, TXT (Max 5MB)</small>
+                        <input type="file" id="file-upload" accept=".pdf,.txt" hidden>
+                        <div id="file-name" class="selected-file"></div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button id="summarize-btn" class="btn-primary">
+                        <span class="btn-text">Summarize Now</span>
+                        <div class="loader" id="loader"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="output-section hidden" id="output-section">
+            <div class="result-grid">
+                <!-- Original Text Card -->
+                <div class="card glass result-card">
+                    <div class="card-header">
+                        <h3>Original Content</h3>
+                        <span class="badge" id="original-word-count">0 words</span>
+                    </div>
+                    <div class="content-scroll" id="original-display"></div>
+                </div>
+
+                <!-- Summary Card -->
+                <div class="card glass result-card highlighted">
+                    <div class="card-header">
+                        <h3>AI Summary</h3>
+                        <div class="action-btns">
+                            <button class="icon-btn" id="copy-btn" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+                            <button class="icon-btn" id="download-btn" title="Download as TXT"><i class="fas fa-download"></i></button>
+                        </div>
+                    </div>
+                    <div class="content-scroll" id="summary-display"></div>
+                    <div class="keywords-area">
+                        <span class="kw-label">Keywords:</span>
+                        <div id="keywords-list" class="kw-tags"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SummaAI - Advanced NLP Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

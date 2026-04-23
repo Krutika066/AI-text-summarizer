@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+requests
+PyPDF2
+python-multipart
+nltk
+rake-nltk
